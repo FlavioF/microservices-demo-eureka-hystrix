@@ -4,6 +4,11 @@ spring:
   cloud:
     config:
       uri: http://${CONFIG_SERVER_IP:localhost}:8888
+      failFast: true
+      retry:
+        maxAttempts: 100
+        maxInterval: 2000
+        initialInterval: 30000
 ---  
 server:
   port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
