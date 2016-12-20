@@ -27,7 +27,7 @@ cd micro3-word-server
 (run it in background or one for shell)
 
 ```
-mvn spring-boot:run -Dspring.profiles.active=article
+mvn spring-boot:run -Dspring.profiles.active=purchase
 mvn spring-boot:run -Dspring.profiles.active=customer
 mvn spring-boot:run -Dspring.profiles.active=offer
 mvn spring-boot:run -Dspring.profiles.active=payment

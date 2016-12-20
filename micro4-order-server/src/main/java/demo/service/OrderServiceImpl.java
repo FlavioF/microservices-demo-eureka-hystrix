@@ -24,7 +24,7 @@ public class OrderServiceImpl implements OrderService {
 				"bought",
 				wordService.getProduct().getString(),
 				wordService.getPayment().getString(),
-				wordService.getArticle().getString(),
+				wordService.getPurchase().getString(),
 				wordService.getOffer().getString())
 			;
 	}	

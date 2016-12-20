@@ -22,9 +22,9 @@ spring:
     name: payment
 ---
 spring:
-  profiles: article
+  profiles: purchase
   application:
-    name: article
+    name: purchase
 ---
 spring:
   profiles: offer

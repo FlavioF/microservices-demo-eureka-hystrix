@@ -22,7 +22,7 @@ words: Paid_by_Visa,Paid_by_Cash,Paid_by_Debit,Paid_by_MasterCard,Paid_by_Coupon
 
 ---
 spring:
-  profiles: article
+  profiles: purchase
 words: and_got_the_FREE_offer_of,and_availed_of
 
 ---

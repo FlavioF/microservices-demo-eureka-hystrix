@@ -6,7 +6,7 @@ public interface WordService {
 
 	Word getCustomer();
 	Word getPayment();
-	Word getArticle();
+	Word getPurchase();
 	Word getOffer();
 	Word getProduct();
 

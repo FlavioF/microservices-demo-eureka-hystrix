@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import demo.dao.OfferClient;
-import demo.dao.ArticleClient;
+import demo.dao.PurchaseClient;
 import demo.dao.ProductClient;
 import demo.dao.CustomerClient;
 import demo.dao.PaymentClient;
@@ -21,7 +21,7 @@ public class WordServiceImpl implements WordService {
 	@Autowired
     CustomerClient customerClient;
 	@Autowired
-	ArticleClient articleClient;
+    PurchaseClient purchaseClient;
 	@Autowired
 	OfferClient offerClient;
 	@Autowired
@@ -42,8 +42,8 @@ public class WordServiceImpl implements WordService {
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getFallbackGeneric")
-	public Word getArticle() {
-		return articleClient.getWord();
+	public Word getPurchase() {
+		return purchaseClient.getWord();
 	}
 	
 	@Override
