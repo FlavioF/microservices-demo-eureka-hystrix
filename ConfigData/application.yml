@@ -7,26 +7,25 @@ eureka:
 
 ---
 spring:
-  profiles: subject
-words: I,You,He,She,It
-  
+  profiles: customer
+words: Phil-Lavoie,Stefan-Sherer,Tasneem-Saleem,Sylvain-Boies,Cole-Charlton,Brooke-Smith
+
 ---
 spring:
-  profiles: verb
-words: ran,knew,had,saw,bought
+  profiles: product
+words: Fries,McNuggets,QuarterPounder,Coke,Cheese,Hamburger,Cheeseburger,McDouble
+
+---
+spring:
+  profiles: payment
+words: Paid_by_Visa,Paid_by_Cash,Paid_by_Debit,Paid_by_MasterCard,Paid_by_Coupons
 
 ---
 spring:
   profiles: article
-words: a,the
+words: and_got_the_FREE_offer_of,and_availed_of
 
 ---
 spring:
-  profiles: adjective
-words: reasonable,leaky,suspicious,ordinary,unlikely
-
----
-spring:
-  profiles: noun
-words: boat,book,vote,seat,backpack,partition,groundhog
-  
+  profiles: offer
+words: Dollar_Drink_Days,Free-Big-Mac-or-McChicken-with-McDonalds-Gift-Card-purchase,Buy-One-Large-Sandwich-GET-ONE-FREE,SAVE-20Dollars-ON-10-PC,1-dollar-OFF-LARGE-FRIES
