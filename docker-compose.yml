@@ -4,65 +4,98 @@
 version: '2'
 services:
   eureka:
+    restart: always
     build: ./micro1-eureka-server
+    command: -Djava.security.egd=file:/dev/./urandom -jar /app.jar
     ports:
-    - "8761:8761"
-##    environment:
-###       EUREKA_INSTANCE_PREFER_IP_ADDRESS: "true"
-###      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://192.168.99.100:8761/eureka/
-    restart: always
+      - "8761:8761"
   config:
-    build: ./micro2-config-server
-    ports:
-    - "8888:8888"
-    links:
-      - eureka
     restart: always
-  subject:
+    build: ./micro2-config-server
+    command: -Djava.security.egd=file:/dev/./urandom -DSERVER_IP=eureka -DPORT=8888 -jar /app.jar
+    ports:
+      - "8888:8888"
+    depends_on:
+      - "eureka"
+  article:
+    restart: always
     build: ./micro3-word-server
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=article -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8081 -jar /app.jar
     ports:
       - "8081:8081"
     links:
       - eureka
       - config
+    depends_on:
+      - "eureka"
+      - "config"
+  customer:
     restart: always
-  verb:
-    build:
-       context: ./micro3-word-server
-       dockerfile: DockerfileVerb
+    build: ./micro3-word-server
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=customer -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8082 -jar /app.jar
     ports:
       - "8082:8082"
     links:
       - eureka
       - config
+    depends_on:
+      - "eureka"
+      - "config"
+  offer:
     restart: always
-  article:
-    build:
-       context: ./micro3-word-server
-       dockerfile: DockerfileArticle
+    build: ./micro3-word-server
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=offer -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8083 -jar /app.jar
     ports:
       - "8083:8083"
     links:
       - eureka
       - config
+    depends_on:
+      - "eureka"
+      - "config"
+  payment:
     restart: always
-  adjective:
-    build:
-       context: ./micro3-word-server
-       dockerfile: DockerfileAdjective
+    build: ./micro3-word-server
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=payment -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8084 -jar /app.jar
     ports:
       - "8084:8084"
     links:
       - eureka
       - config
+    depends_on:
+      - "eureka"
+      - "config"
+  product:
     restart: always
-  noun:
-    build:
-       context: ./micro3-word-server
-       dockerfile: DockerfileNoun
+    build: ./micro3-word-server
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=product  -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8085 -jar /app.jar
     ports:
       - "8085:8085"
     links:
       - eureka
       - config
+    depends_on:
+      - "eureka"
+      - "config"
+  order:
     restart: always
+    build: ./micro4-order-server
+    command: -Djava.security.egd=file:/dev/./urandom  -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -jar /app.jar
+    ports:
+      - "8020:8020"
+    links:
+      - eureka
+      - config
+      - article
+      - customer
+      - offer
+      - payment
+      - product
+    depends_on:
+      - "eureka"
+      - "config"
+      - "article"
+      - "customer"
+      - "offer"
+      - "payment"
+      - "product"

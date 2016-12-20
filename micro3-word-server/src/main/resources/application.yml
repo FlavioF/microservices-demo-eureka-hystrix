@@ -1,6 +1,8 @@
 # Note: all properties defined in this file are subject to replacement by the configuration server.
 ---
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     register-with-eureka: true
     fetch-registry: true

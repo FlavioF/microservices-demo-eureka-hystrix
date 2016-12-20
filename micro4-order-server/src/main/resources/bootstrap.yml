@@ -3,9 +3,16 @@
 spring:
   cloud:
     config:
-      uri: http://${SERVER_IP:localhost}:8888
+      uri: http://${CONFIG_SERVER_IP:localhost}:8888
+      failFast: true
+      retry:
+        maxAttempts: 100
+        maxInterval: 2000
+        initialInterval: 1500
 ---
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     register-with-eureka: true
     fetch-registry: true

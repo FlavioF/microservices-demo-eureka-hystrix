@@ -1,5 +1,5 @@
 #
-# Eureka Server Dockerfile
+# Config Server Dockerfile
 #
 # FROM alpine:3.4
 FROM java:openjdk-8-jdk-alpine
@@ -16,4 +16,4 @@ ADD ./target/eureka-server-1.0.jar /app.jar
 RUN sh -c 'touch /app.jar'
 EXPOSE 8761
 VOLUME /tmp
-CMD ["java","-Djava.security.egd=file:/dev/./urandom","-DSERVER_IP=192.168.99.100","-jar","/app.jar"]
+ENTRYPOINT ["java"]
