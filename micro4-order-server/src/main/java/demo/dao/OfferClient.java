@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import demo.domain.Word;
 
-@FeignClient("SUBJECT")
-public interface SubjectClient {
+@FeignClient("OFFER")
+public interface OfferClient {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	Word getWord();

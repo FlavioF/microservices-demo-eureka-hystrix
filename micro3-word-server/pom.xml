@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>word-server</name>
-	<description>Microservice which serves up individual, random words for a give part of speech.</description>
+	<description>Microservice which serves up individual, random words.</description>
 
 	<parent>
 		<groupId>org.springframework.cloud</groupId>

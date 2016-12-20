@@ -18,18 +18,12 @@ REM ###### START MICROSERVICES AS EUREKA CLIENT SERVER ######
 cd ..
 cd word-server
 
-timeout /t 30
-start mvn spring-boot:run -Dspring.profiles.active=subject
-
-timeout /t 30
-start mvn spring-boot:run -Dspring.profiles.active=verb
-timeout /t 30
-start mvn spring-boot:run -Dspring.profiles.active=article
-timeout /t 30
-start mvn spring-boot:run -Dspring.profiles.active=adjective
-
-timeout /t 30
-start mvn spring-boot:run -Dspring.profiles.active=noun
+## Starting services without docker (run it in background or one for shell)
+mvn spring-boot:run -Dspring.profiles.active=article
+mvn spring-boot:run -Dspring.profiles.active=customer
+mvn spring-boot:run -Dspring.profiles.active=offer
+mvn spring-boot:run -Dspring.profiles.active=payment
+mvn spring-boot:run -Dspring.profiles.active=product
 
 REM ###### START MICROSERVICES AS EUREKA CLIENT SERVER ######
 

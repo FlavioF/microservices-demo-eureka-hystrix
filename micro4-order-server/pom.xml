@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.jini</groupId>
-	<artifactId>sentence-server</artifactId>
+	<artifactId>order-server</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>sentence-composite-server</name>
+	<name>order-composite-server</name>
 	<description>Spring Boot Sentence Composite Server</description>
 
 	<parent>

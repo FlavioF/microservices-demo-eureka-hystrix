@@ -72,7 +72,7 @@ services:
       - "config"
   sentence:
     restart: always
-    build: ./micro9-sentence-server
+    build: ./micro9-order-server
     ports:
       - "8020:8020"
     links:

@@ -12,14 +12,14 @@ server:
 # itself a different name when registering with Eureka
 ---
 spring:
-  profiles: subject
+  profiles: customer
   application:
-    name: subject
+    name: customer
 ---
 spring:
-  profiles: verb
+  profiles: payment
   application:
-    name: verb
+    name: payment
 ---
 spring:
   profiles: article
@@ -27,11 +27,11 @@ spring:
     name: article
 ---
 spring:
-  profiles: adjective
+  profiles: offer
   application:
-    name: adjective
+    name: offer
 ---
 spring:
-  profiles: noun
+  profiles: product
   application:
-    name: noun
+    name: product

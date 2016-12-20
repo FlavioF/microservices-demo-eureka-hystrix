@@ -10,7 +10,7 @@ spring:
     config:
       server: 
         git:
-          uri: https://github.com/bipingupta/Microservices-Demo
+          uri: https://github.com/FlavioF/Microservices-Demo
           searchPaths: ConfigData
 #          uri: file://D:/IBM/Workspace/SpringCloud/Microservices-Demo/ConfigData/Microservices-With-Spring-Student-Files
 #          searchPaths: ConfigData
