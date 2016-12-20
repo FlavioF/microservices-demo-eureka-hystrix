@@ -17,10 +17,10 @@ services:
       - "8888:8888"
     depends_on:
       - "eureka"
-  article:
+  purchase:
     restart: always
     build: ./micro3-word-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=article -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8081 -jar /app.jar
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=purchase -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPORT=8081 -jar /app.jar
     ports:
       - "8081:8081"
     links:
@@ -86,7 +86,7 @@ services:
     links:
       - eureka
       - config
-      - article
+      - purchase
       - customer
       - offer
       - payment
@@ -94,7 +94,7 @@ services:
     depends_on:
       - "eureka"
       - "config"
-      - "article"
+      - "purchase"
       - "customer"
       - "offer"
       - "payment"
