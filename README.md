@@ -40,10 +40,10 @@ start mvn spring-boot:run
 ## START MICROSERVICES AS EUREKA CLIENT SERVER ######
 ```
 cd ..
-cd micro3-word-server
+cd micro3-ecommerce-server
 ```
 (run it in background or one for shell)
-
+ENSURE that eureka and config already listed in eureka server
 ```
 start mvn spring-boot:run -Dspring.profiles.active=purchase
 start mvn spring-boot:run -Dspring.profiles.active=customer
