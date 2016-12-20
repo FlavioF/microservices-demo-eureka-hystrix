@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.test</groupId>
-	<artifactId>word-server</artifactId>
+	<artifactId>ecommerce-server</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>word-server</name>
+	<name>ecommerce-server</name>
 	<description>Microservice which serves up individual, random words.</description>
 
 	<parent>

@@ -4,7 +4,12 @@ Microservices demo using Spring Boot, Spring Cloud, Cofig, Netflix Eureka and Hy
 # Running with Docker-compose
 ```
 docker-compose build
-docker-compose up
+docker-compose start eureka config
+
+-- WAIT till the services listed in eureka server
+
+docker-compose start purchase customer offer payment product order
+
 ```
 
 # Running without Docker

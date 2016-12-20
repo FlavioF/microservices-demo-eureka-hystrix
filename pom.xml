@@ -11,7 +11,7 @@
     <modules>
         <module>micro1-eureka-server</module>
         <module>micro2-config-server</module>
-        <module>micro3-word-server</module>
+        <module>micro3-ecommerce-server</module>
         <module>micro4-order-server</module>
 		<module>micro5-zuul-server</module>
 		<module>micro6-turbine-server</module>
