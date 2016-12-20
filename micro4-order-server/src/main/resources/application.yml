@@ -1,7 +1,7 @@
 # Properties active for ALL profiles:
 ---
 server:
-  port: 8020
+  port: ${SERVER_PORT:8020}
 ---
 spring:
   application:
