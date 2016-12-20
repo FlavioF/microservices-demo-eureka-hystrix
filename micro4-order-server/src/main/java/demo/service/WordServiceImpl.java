@@ -29,41 +29,54 @@ public class WordServiceImpl implements WordService {
 	
 	
 	@Override
-	@HystrixCommand(fallbackMethod="getFallbackSubject")
+	@HystrixCommand(fallbackMethod="getCustomerFallback")
 	public Word getCustomer() {
 		return customerClient.getWord();
 	}
 	
 	@Override
-	@HystrixCommand(fallbackMethod="getFallbackGeneric")
+	@HystrixCommand(fallbackMethod="getPaymentFallback")
 	public Word getPayment() {
 		return paymentClient.getWord();
 	}
 	
 	@Override
-	@HystrixCommand(fallbackMethod="getFallbackGeneric")
+	@HystrixCommand(fallbackMethod="getPurchaseFallback")
 	public Word getPurchase() {
 		return purchaseClient.getWord();
 	}
 	
 	@Override
-	@HystrixCommand(fallbackMethod="getFallbackGeneric")
+	@HystrixCommand(fallbackMethod="getOfferFallback")
 	public Word getOffer() {
 		return offerClient.getWord();
 	}
 	
 	@Override
-	@HystrixCommand(fallbackMethod="getFallbackGeneric")
+	@HystrixCommand(fallbackMethod="getProductFallback")
 	public Word getProduct() {
 		return productClient.getWord();
 	}	
 
-	public Word getFallbackSubject() {
-		return new Word("Someone");
+	public Word getCustomerFallback() {
+		return new Word("Pras_Biswas");
 	}
 
-	public Word getFallbackGeneric() {
-		return new Word("Unknown");
+	public Word getPaymentFallback() {
+		return new Word("Paid_by_Cash");
 	}
+
+	public Word getPurchaseFallback() {
+		return new Word("Paid_for_and_got_free");
+	}
+
+	public Word getOfferFallback() {
+		return new Word("Free_Fries");
+	}
+
+	public Word getProductFallback() {
+		return new Word("BigMac");
+	}
+
 
 }
