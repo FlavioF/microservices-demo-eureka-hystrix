@@ -19,7 +19,7 @@ public class OrderController {
 	/**
 	 * Display a small list of Sentences to the caller:
 	 */
-	@RequestMapping("/sentence")
+	@RequestMapping("/order")
 	public @ResponseBody String getSentence() {
 		long start = System.currentTimeMillis();
 		String output = 
