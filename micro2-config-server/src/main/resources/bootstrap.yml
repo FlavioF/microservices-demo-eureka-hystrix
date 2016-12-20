@@ -2,7 +2,7 @@
 ---
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: ${PREFER_IP_ADDRESS:false}
   client:
     register-with-eureka: true
     fetch-registry: false
