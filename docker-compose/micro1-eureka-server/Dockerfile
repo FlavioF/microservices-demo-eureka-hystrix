@@ -11,7 +11,7 @@ RUN apk update && apk add openssh
 
 # Add directly the jar
 ENV SPRING_PROFILES=dev
-ADD ./target/eureka-server-1.0.jar /app.jar
+ADD ../micro1-eureka-server/target/eureka-server-1.0.jar /app.jar
 
 RUN sh -c 'touch /app.jar'
 EXPOSE 8761

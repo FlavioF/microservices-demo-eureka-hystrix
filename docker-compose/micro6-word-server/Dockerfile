@@ -14,4 +14,4 @@ RUN sh -c 'touch /app.jar'
 VOLUME /tmp
 
 EXPOSE 8084
-CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=adjective","-DSERVER_IP=192.168.99.100","-DPORT=8084","-jar","/app.jar"]
+CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=payment","-DSERVER_IP=192.168.99.100","-DPORT=8084","-jar","/app.jar"]

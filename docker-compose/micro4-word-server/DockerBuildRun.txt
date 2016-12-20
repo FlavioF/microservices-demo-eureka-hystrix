@@ -1,2 +1,2 @@
-docker build -t bipin:verb .
-docker run -t –p 8082:8082 bipin:verb
+docker build -t bipin:customer .
+docker run -t –p 8082:8082 bipin:customer
