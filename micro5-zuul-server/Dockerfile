@@ -4,7 +4,7 @@
 # FROM alpine:3.4
 FROM java:openjdk-8-jdk-alpine
 
-MAINTAINER Bipin Gupta 
+MAINTAINER Pras Biswas
 
 # Add OpenSSH
 RUN apk update && apk add openssh

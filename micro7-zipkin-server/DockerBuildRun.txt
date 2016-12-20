@@ -1,2 +1,2 @@
-docker build -t bipin:zipkin .
-docker run -t –p 8030:8030 biping:zikin
+docker build -t pras-demo:zipkin .
+docker run -t –p 8030:8030 pras-demog:zikin

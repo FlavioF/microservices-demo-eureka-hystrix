@@ -1,2 +1,2 @@
-docker build -t bipin:sentence-composite .
-docker run -t –p 8020:8020 biping:sentence-composite
+docker build -t pras-demo:sentence-composite .
+docker run -t –p 8020:8020 pras-demog:sentence-composite

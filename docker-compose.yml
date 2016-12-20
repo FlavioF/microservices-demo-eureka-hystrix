@@ -21,7 +21,7 @@ services:
       - "eureka"
   purchase:
     restart: always
-    build: ./micro3-word-server
+    build: ./micro3-ecommerce-server
     command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=purchase -DPORT=8081 -jar /app.jar
     network_mode: "host"
     ports:
@@ -31,7 +31,7 @@ services:
       - "config"
   customer:
     restart: always
-    build: ./micro3-word-server
+    build: ./micro3-ecommerce-server
     command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=customer -DPORT=8082 -jar /app.jar
     network_mode: "host"
     ports:
@@ -41,7 +41,7 @@ services:
       - "config"
   offer:
     restart: always
-    build: ./micro3-word-server
+    build: ./micro3-ecommerce-server
     command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=offer -DPORT=8083 -jar /app.jar
     network_mode: "host"
     ports:
@@ -51,7 +51,7 @@ services:
       - "config"
   payment:
     restart: always
-    build: ./micro3-word-server
+    build: ./micro3-ecommerce-server
     command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=payment -DPORT=8084 -jar /app.jar
     network_mode: "host"
     ports:
@@ -61,7 +61,7 @@ services:
       - "config"
   product:
     restart: always
-    build: ./micro3-word-server
+    build: ./micro3-ecommerce-server
     command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=product -DPORT=8085 -jar /app.jar
     network_mode: "host"
     ports:

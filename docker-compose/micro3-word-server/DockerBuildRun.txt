@@ -1,2 +1,2 @@
-docker build -t bipin:article .
-docker run -t –p 8081:8081 bipin:article
+docker build -t pras-demo:article .
+docker run -t –p 8081:8081 pras-demo:article

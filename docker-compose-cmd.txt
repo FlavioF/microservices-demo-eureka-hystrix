@@ -16,6 +16,6 @@ docker-machine start default
 docker-machine env
 ======================
 docker stats
-docker build -t bipin:config .
-docker run -t -d -p 8888:8888 --name config1 --link eureka1  bipin:config 
+docker build -t pras-demo:config .
+docker run -t -d -p 8888:8888 --name config1 --link eureka1  pras-demo:config
 ======================

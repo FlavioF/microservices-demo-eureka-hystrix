@@ -1,2 +1,2 @@
-docker build -t bipin:offer .
-docker run -t –p 8083:8083 bipin:offer
+docker build -t pras-demo:offer .
+docker run -t –p 8083:8083 pras-demo:offer

@@ -1,2 +1,2 @@
-docker build -t bipin:customer .
-docker run -t –p 8082:8082 bipin:customer
+docker build -t pras-demo:customer .
+docker run -t –p 8082:8082 pras-demo:customer

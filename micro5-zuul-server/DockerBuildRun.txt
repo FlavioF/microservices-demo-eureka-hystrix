@@ -1,2 +1,2 @@
-docker build -t bipin:zuul .
-docker run -t –p 8020:8020 biping:zuul
+docker build -t pras-demo:zuul .
+docker run -t –p 8020:8020 pras-demog:zuul

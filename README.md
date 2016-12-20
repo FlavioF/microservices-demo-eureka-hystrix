@@ -10,6 +10,19 @@ docker-compose start eureka config
 
 docker-compose start purchase customer offer payment product order
 
+
+```
+
+OPTIONALLY
+
+```
+docker-compose build
+docker-compose up
+
+-- WAIT till config and eureka server listed in eureka server
+
+docker-compose restart purchase customer offer payment product order
+
 ```
 
 # Running without Docker

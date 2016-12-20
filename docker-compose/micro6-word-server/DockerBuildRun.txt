@@ -1,2 +1,2 @@
-docker build -t bipin:payment .
-docker run -t –p 8084:8084 bipin:payment
+docker build -t pras-demo:payment .
+docker run -t –p 8084:8084 pras-demo:payment

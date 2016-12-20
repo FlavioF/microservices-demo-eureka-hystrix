@@ -1,2 +1,2 @@
-docker build -t bipin:product .
-docker run -t –p 8085:8085 bipin:product
+docker build -t pras-demo:product .
+docker run -t –p 8085:8085 pras-demo:product
