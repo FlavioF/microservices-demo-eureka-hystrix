@@ -1,12 +1,2 @@
 # Note: all properties defined in this file are subject to replacement by the configuration server.
----
-eureka:
-  instance:
-    preferIpAddress: ${PREFER_IP_ADDRESS:false}
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://${SERVER_IP:localhost}:${EUREKA_SERVER_PORT:8761}/eureka/
----
 words: fallback

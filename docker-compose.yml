@@ -6,76 +6,91 @@ services:
   eureka:
     restart: always
     build: ./micro1-eureka-server
-    command: -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -DPREFER_IP_ADDRESS=true -jar /app.jar
     ports:
-      - "8761:8761"
+      - "9761:8761"
   config:
     restart: always
     build: ./micro2-config-server
-    command: -Djava.security.egd=file:/dev/./urandom -DPORT=8888 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true -DPORT=8888 -jar /app.jar
     ports:
-      - "8888:8888"
+      - "9888:8888"
     depends_on:
       - "eureka"
   purchase:
     restart: always
     build: ./micro3-ecommerce-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=purchase -DPORT=8081 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=purchase -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true -DPORT=8081 -jar /app.jar
     ports:
-      - "8081:8081"
+      - "9081:8081"
+    links:
+      - eureka
+      - config
     depends_on:
       - "eureka"
       - "config"
   customer:
     restart: always
     build: ./micro3-ecommerce-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=customer -DPORT=8082 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=customer -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true -DPORT=8082 -jar /app.jar
     ports:
-      - "8082:8082"
+      - "9082:8082"
+    links:
+      - eureka
+      - config
     depends_on:
       - "eureka"
       - "config"
   offer:
     restart: always
     build: ./micro3-ecommerce-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=offer -DPORT=8083 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=offer -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true -DPORT=8083 -jar /app.jar
     ports:
-      - "8083:8083"
+      - "9083:8083"
+    links:
+      - eureka
+      - config
     depends_on:
       - "eureka"
       - "config"
   payment:
     restart: always
     build: ./micro3-ecommerce-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=payment -DPORT=8084 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=payment -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka  -DPREFER_IP_ADDRESS=true -DPORT=8084 -jar /app.jar
     ports:
-      - "8084:8084"
+      - "9084:8084"
+    links:
+      - eureka
+      - config
     depends_on:
       - "eureka"
       - "config"
   product:
     restart: always
     build: ./micro3-ecommerce-server
-    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=product -DPORT=8085 -jar /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=product  -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true -DPORT=8085 -jar /app.jar
     ports:
-      - "8085:8085"
+      - "9085:8085"
+    links:
+      - eureka
+      - config
     depends_on:
       - "eureka"
       - "config"
   order:
     restart: always
     build: ./micro4-order-server
-    command: -Djava.security.egd=file:/dev/./urandom -jar -DSERVER_PORT=8020 /app.jar
-    network_mode: "host"
+    command: -Djava.security.egd=file:/dev/./urandom  -DCONFIG_SERVER_IP=config -DSERVER_IP=eureka -DPREFER_IP_ADDRESS=true  -jar /app.jar
     ports:
-      - "8020:8020"
+      - "9020:8020"
+    links:
+      - eureka
+      - config
+      - purchase
+      - customer
+      - offer
+      - payment
+      - product
     depends_on:
       - "eureka"
       - "config"

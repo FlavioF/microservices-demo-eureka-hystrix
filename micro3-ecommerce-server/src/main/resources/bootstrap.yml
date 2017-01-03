@@ -3,11 +3,25 @@
 spring:
   cloud:
     config:
-      uri: http://${CONFIG_SERVER_IP:localhost}:${CONFIG_SERVER_PORT:8888}
----  
+      uri: http://${CONFIG_SERVER_IP:localhost}:8888
+      failFast: true
+      retry:
+        maxAttempts: 100
+        maxInterval: 2000
+        initialInterval: 30000
+---
 server:
   port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
-
+---
+eureka:
+  instance:
+    preferIpAddress: ${PREFER_IP_ADDRESS:false}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${SERVER_IP:localhost}:8761/eureka/
+---
 # Depending on which profile is active, the application gives 
 # itself a different name when registering with Eureka
 ---

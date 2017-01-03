@@ -1,27 +1,12 @@
 # Microservices-Demo
 Microservices demo using Spring Boot, Spring Cloud, Cofig, Netflix Eureka and Hystrix
 
+
 # Running with Docker-compose
 ```
-docker-compose build
-docker-compose start eureka config
-
--- WAIT till the services listed in eureka server
-
-docker-compose start purchase customer offer payment product order
-
-
-```
-
-OPTIONALLY
-
-```
+mvn package -DskipTests
 docker-compose build
 docker-compose up
-
--- WAIT till config and eureka server listed in eureka server
-
-docker-compose restart purchase customer offer payment product order
 
 ```
 
@@ -61,22 +46,26 @@ start mvn spring-boot:run
 ```
 
 # Links
+
+
 ### CHECK EUREKA
 
-http://localhost:8010/
+Outside Docker: http://localhost:8761/
+Inside Docker: http://localhost:9761/
 
 ### CHECK SENTENCE SERVER
 
-http://localhost:8020/order
+Outside Docker: http://localhost:8020/order
+Inside Docker: http://localhost:9020/order
 
 ### CHECK HYSTRIX SERVER
 
-http://localhost:8020/hystrix
-
-ENTER IN HYSTRIX BROWSER ===> http://localhost:8020/hystrix.stream
+Outside Docker: http://localhost:8020/order
+Inside Docker: http://localhost:9020/hystrix
 
 # Changing Configuration
 
-If you want to change ConfigData you must change uri of application.yml from micro2-config-server to the location of your folder
+If you want to change ConfigData you must change uri of application.yml from micro2-config-server to the a GIT location of your folder.
+To test it using a file system backend take a look into this link: https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html
 
 

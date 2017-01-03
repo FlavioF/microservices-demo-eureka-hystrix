@@ -1,15 +1,18 @@
 ---
 # Properties active for ALL profiles:
 server:
-  port: ${SERVER_PORT:8761}
+  port: 8761  
 eureka:
   instance:
     preferIpAddress: ${PREFER_IP_ADDRESS:false}
-  client: 
-    registerWithEureka: true
-    fetchRegistry: false
+  client:
     service-url:
-      defaultZone: http://${SERVER_IP:localhost}:${SERVER_PORT:8761}/eureka/
-
-spring.cloud.config.discovery.enabled: true
+      defaultZone: http://${SERVER_IP:localhost}:8761/eureka/
+      
+# primary, secondary, and tertiary illustrate running 3 intercommunicating instances.  This example has them running
+# side-by-side on localhost -- which is unrealistic in production -- but does illustrate how multiple instances collaborate.
+# Run by opening 3 separate command prompts:
+# java -jar -Dspring.profiles.active=primary lab-4-eureka-server-solution-0.0.1-SNAPSHOT.jar
+# java -jar -Dspring.profiles.active=secondary lab-4-eureka-server-solution-0.0.1-SNAPSHOT.jar
+# java -jar -Dspring.profiles.active=tertiary lab-4-eureka-server-solution-0.0.1-SNAPSHOT.jar
       
