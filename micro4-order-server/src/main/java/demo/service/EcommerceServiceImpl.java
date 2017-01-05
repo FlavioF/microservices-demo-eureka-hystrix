@@ -1,6 +1,7 @@
 package demo.service;
 
 
+import demo.domain.Ecommerce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,9 @@ import demo.dao.PurchaseClient;
 import demo.dao.ProductClient;
 import demo.dao.CustomerClient;
 import demo.dao.PaymentClient;
-import demo.domain.Word;
 
 @Service
-public class WordServiceImpl implements WordService {
+public class EcommerceServiceImpl implements EcommerceService {
 
 	@Autowired
 	PaymentClient paymentClient;
@@ -30,52 +30,52 @@ public class WordServiceImpl implements WordService {
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getCustomerFallback")
-	public Word getCustomer() {
-		return customerClient.getWord();
+	public Ecommerce getCustomer() {
+		return customerClient.getEcommerce();
 	}
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getPaymentFallback")
-	public Word getPayment() {
-		return paymentClient.getWord();
+	public Ecommerce getPayment() {
+		return paymentClient.getEcommerce();
 	}
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getPurchaseFallback")
-	public Word getPurchase() {
-		return purchaseClient.getWord();
+	public Ecommerce getPurchase() {
+		return purchaseClient.getEcommerce();
 	}
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getOfferFallback")
-	public Word getOffer() {
-		return offerClient.getWord();
+	public Ecommerce getOffer() {
+		return offerClient.getEcommerce();
 	}
 	
 	@Override
 	@HystrixCommand(fallbackMethod="getProductFallback")
-	public Word getProduct() {
-		return productClient.getWord();
+	public Ecommerce getProduct() {
+		return productClient.getEcommerce();
 	}	
 
-	public Word getCustomerFallback() {
-		return new Word("Pras_Biswas");
+	public Ecommerce getCustomerFallback() {
+		return new Ecommerce("Pras_Biswas");
 	}
 
-	public Word getPaymentFallback() {
-		return new Word("Paid_by_Cash");
+	public Ecommerce getPaymentFallback() {
+		return new Ecommerce("Paid_by_Cash");
 	}
 
-	public Word getPurchaseFallback() {
-		return new Word("Paid_for_and_got_free");
+	public Ecommerce getPurchaseFallback() {
+		return new Ecommerce("Paid_for_and_got_free");
 	}
 
-	public Word getOfferFallback() {
-		return new Word("Free_Fries");
+	public Ecommerce getOfferFallback() {
+		return new Ecommerce("Free_Fries");
 	}
 
-	public Word getProductFallback() {
-		return new Word("BigMac");
+	public Ecommerce getProductFallback() {
+		return new Ecommerce("BigMac");
 	}
 
 

@@ -24,11 +24,11 @@ public class OrderController {
 		long start = System.currentTimeMillis();
 		String output = 
 			"<h1>Happy Meals at MacDonalds</h1><br/>" +
-			orderService.buildSentence() + "<br/><br/>" +
-			orderService.buildSentence() + "<br/><br/>" +
-			orderService.buildSentence() + "<br/><br/>" +
-			orderService.buildSentence() + "<br/><br/>" +
-			orderService.buildSentence() + "<br/><br/>" +
+			orderService.build() + "<br/><br/>" +
+			orderService.build() + "<br/><br/>" +
+			orderService.build() + "<br/><br/>" +
+			orderService.build() + "<br/><br/>" +
+			orderService.build() + "<br/><br/>" +
 			"<img src='http://www.nogarlicnoonions.com/images/uploads/NEWS/Mcdonalds.jpg' width=533 height=300>";
 		long end = System.currentTimeMillis();
 		return output + "<br><hr><font size=small>Elapsed time (ms): " + (end - start) + "</font>";

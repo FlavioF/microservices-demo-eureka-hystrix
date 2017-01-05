@@ -30,7 +30,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'wordController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String demo.WordController.words; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'words' in string value "${words}"
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'wordController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String demo.EcommerceController.words; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'words' in string value "${words}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1208)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -72,7 +72,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String demo.WordController.words; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'words' in string value "${words}"
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String demo.EcommerceController.words; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'words' in string value "${words}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)

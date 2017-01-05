@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: lucky-word-discovery-client
+Implementation-Title: lucky-ecommerce-discovery-client
 Implementation-Version: 1.0
 Built-By: jini
 Implementation-Vendor-Id: com.jini

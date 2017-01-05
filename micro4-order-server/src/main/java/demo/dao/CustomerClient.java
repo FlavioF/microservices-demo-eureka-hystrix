@@ -4,12 +4,12 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import demo.domain.Word;
+import demo.domain.Ecommerce;
 
 @FeignClient("CUSTOMER")
 public interface CustomerClient {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	Word getWord();
+	Ecommerce getEcommerce();
 	
 }

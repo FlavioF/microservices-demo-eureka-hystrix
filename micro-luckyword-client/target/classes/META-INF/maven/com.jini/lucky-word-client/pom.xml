@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.jini</groupId>
-	<artifactId>lucky-word-client</artifactId>
+	<artifactId>lucky-ecommerce-client</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>lucky-word-discovery-client</name>
+	<name>lucky-ecommerce-discovery-client</name>
 	<description>Spring Boot Discovery Client</description>
 
 	<prerequisites>

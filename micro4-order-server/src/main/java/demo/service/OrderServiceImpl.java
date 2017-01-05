@@ -11,21 +11,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired WordService wordService;
+	@Autowired
+	EcommerceService ecommerceService;
 	
 
 	/**
 	 * Assemble a sentence by gathering random words of each part of speech:
 	 */
-	public String buildSentence() {
+	public String build() {
 		return  
 			String.format("%s %s %s %s %s %s.",
-				wordService.getCustomer().getString(),
+				ecommerceService.getCustomer().getString(),
 				"bought",
-				wordService.getProduct().getString(),
-				wordService.getPayment().getString(),
-				wordService.getPurchase().getString(),
-				wordService.getOffer().getString())
+				ecommerceService.getProduct().getString(),
+				ecommerceService.getPayment().getString(),
+				ecommerceService.getPurchase().getString(),
+				ecommerceService.getOffer().getString())
 			;
 	}	
 }

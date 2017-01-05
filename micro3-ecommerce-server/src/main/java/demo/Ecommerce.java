@@ -1,17 +1,17 @@
 package demo;
 
 /**
- * 'Word' object is nicely represented in JSON over a regular String.
+ * 'Ecommerce' object is nicely represented in JSON over a regular String.
  */
-public class Word {
+public class Ecommerce {
 
 	public String word;
 
-	public Word() {
+	public Ecommerce() {
 		super();
 	}	
 	
-	public Word(String word) {
+	public Ecommerce(String word) {
 		this();
 		this.word = word;
 	}

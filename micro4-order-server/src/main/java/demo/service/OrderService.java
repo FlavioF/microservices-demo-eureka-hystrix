@@ -5,6 +5,6 @@ package demo.service;
  */
 public interface OrderService {
 
-	public String buildSentence();
+	public String build();
 
 }
