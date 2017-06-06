@@ -1,6 +1,7 @@
 # Microservices-Demo
 Microservices demo using Spring Boot, Spring Cloud, Cofig, Netflix Eureka and Hystrix
 
+Based on https://github.com/xiaohai327/Microservices-Demo
 
 # Running with Docker-compose
 ```
