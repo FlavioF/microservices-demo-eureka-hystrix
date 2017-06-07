@@ -1,2 +1,0 @@
-docker build -t pras-demo:sentence-composite .
-docker run -t –p 8020:8020 pras-demo:sentence-composite

@@ -1,2 +1,0 @@
-docker build -t pras-demo:subject .
-docker run -t –p 9000:9000 --link eureka1 --link config1 pras-demo:subject

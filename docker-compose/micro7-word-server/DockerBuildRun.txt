@@ -1,2 +1,0 @@
-docker build -t pras-demo:product .
-docker run -t –p 8085:8085 pras-demo:product

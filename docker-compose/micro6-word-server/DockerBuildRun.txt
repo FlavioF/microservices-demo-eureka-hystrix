@@ -1,2 +1,0 @@
-docker build -t pras-demo:payment .
-docker run -t –p 8084:8084 pras-demo:payment

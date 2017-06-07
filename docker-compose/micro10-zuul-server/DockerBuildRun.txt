@@ -1,2 +1,0 @@
-docker build -t pras-demo:zuul .
-docker run -t –p 8080:8080 pras-demog:zuul
